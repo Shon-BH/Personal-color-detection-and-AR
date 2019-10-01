@@ -20,6 +20,10 @@ FACIAL_LANDMARKS_INDEXES = OrderedDict([
 
 facial_features_cordinates = {}
 
+rgb_1 = 19
+rgb_2 = 199
+rgb_3 = 109
+
 def visualize_facial_landmarks(frame, shape, colors=None, alpha=0.75):
     # create two copies of the input image -- one for the
     # overlay and one for the final output image
@@ -29,7 +33,7 @@ def visualize_facial_landmarks(frame, shape, colors=None, alpha=0.75):
     # if the colors list is None, initialize it with a unique
     # color for each facial landmark region
     if colors is None:
-        colors = [(19, 199, 109)]
+        colors = [(rgb_1, rgb_2, rgb_3)]
 
     # loop over the facial landmark regions individually
     for (i, name) in enumerate(FACIAL_LANDMARKS_INDEXES.keys()):
@@ -54,9 +58,9 @@ def visualize_facial_landmarks(frame, shape, colors=None, alpha=0.75):
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--shape-predictor", required=True,
-	help="path to facial landmark predictor")
+    help="path to facial landmark predictor")
 ap.add_argument("-r", "--picamera", type=int, default=-1,
-	help="whether or not the Raspberry Pi camera should be used")
+    help="whether or not the Raspberry Pi camera should be used")
 args = vars(ap.parse_args())
 
 # initialize dlib's face detector (HOG-based) and then create
@@ -72,32 +76,32 @@ time.sleep(0.5)
 
 # loop over the frames from the video stream
 while True:
-	# grab the frame from the threaded video stream, resize it to
-	# have a maximum width of 400 pixels, and convert it to
-	# grayscale
-	frame = vs.read()
-	frame = imutils.resize(frame, width=400)
-	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # grab the frame from the threaded video stream, resize it to
+    # have a maximum width of 400 pixels, and convert it to
+    # grayscale
+    frame = vs.read()
+    frame = imutils.resize(frame, width=400)
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-	# detect faces in the grayscale frame
-	rects = detector(gray, 0)
+    # detect faces in the grayscale frame
+    rects = detector(gray, 0)
 
-	# loop over the face detections
-	for (i, rect) in enumerate(rects):
-		# determine the facial landmarks for the face region, then
-		# convert the facial landmark (x, y)-coordinates to a NumPy
-		# array
-		shape = predictor(gray, rect)
-		shape = face_utils.shape_to_np(shape)
-		frame = visualize_facial_landmarks(frame, shape)
+    # loop over the face detections
+    for (i, rect) in enumerate(rects):
+        # determine the facial landmarks for the face region, then
+        # convert the facial landmark (x, y)-coordinates to a NumPy
+        # array
+        shape = predictor(gray, rect)
+        shape = face_utils.shape_to_np(shape)
+        frame = visualize_facial_landmarks(frame, shape)
 
-	# show the frame
-	cv2.imshow("Frame", frame)
-	key = cv2.waitKey(1) & 0xFF
+    # show the frame
+    cv2.imshow("Frame", frame)
+    key = cv2.waitKey(1) & 0xFF
 
-	# if the `q` key was pressed, break from the loop
-	if key == ord("q"):
-		break
+    # if the `q` key was pressed, break from the loop
+    if key == ord("q"):
+        break
 
 # do a bit of cleanup
 cv2.destroyAllWindows()
