@@ -6,5 +6,5 @@
    2) python video_lip_landmarks.py --shape-predictor shape_predictor_68_face_landmarks.dat
    
    *작동 원리
-   Shape_predictor_68_face_landmarks.dat에서 총 1~68개의 얼굴추적 랜드마크 중 입술 부위에 해당하는 49~68번 점을 추적하여 텍스처 
+   Shape_predictor_68_face_landmarks.dat에서 총 1 ~ 68개의 얼굴추적 랜드마크 중 입술 부위에 해당하는 49 ~ 68번 점을 추적하여 텍스처 
    
