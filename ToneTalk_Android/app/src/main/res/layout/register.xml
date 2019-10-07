@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="52dp"
+        android:text="Tone Talk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/explain2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="간단하게\n가입해볼까요?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintStart_toStartOf="@+id/label2"
+        app:layout_constraintTop_toBottomOf="@+id/label2" />
+
+    <TextView
+        android:id="@+id/nicknamet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="닉네임"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/explain2"
+        app:layout_constraintTop_toBottomOf="@+id/explain2" />
+
+    <EditText
+        android:id="@+id/nicknameb"
+        android:layout_width="219dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/textbox"
+        android:padding="5dip"
+        app:layout_constraintStart_toStartOf="@+id/nicknamet"
+        app:layout_constraintTop_toBottomOf="@+id/nicknamet" />
+
+    <TextView
+        android:id="@+id/newPasswordt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="비밀번호"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nicknameb"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameb" />
+
+    <EditText
+        android:id="@+id/newPasswordb"
+        android:layout_width="219dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textbox"
+        android:inputType="textPassword"
+        android:padding="5dip"
+        app:layout_constraintStart_toStartOf="@+id/newPasswordt"
+        app:layout_constraintTop_toBottomOf="@+id/newPasswordt" />
+
+    <TextView
+        android:id="@+id/newPasswordCheckt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="비밀번호 확인"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/newPasswordb"
+        app:layout_constraintTop_toBottomOf="@+id/newPasswordb" />
+
+    <EditText
+        android:id="@+id/newPasswordCheckb"
+        android:layout_width="219dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/textbox"
+        android:inputType="textPassword"
+        android:padding="5dip"
+        app:layout_constraintStart_toStartOf="@+id/newPasswordCheckt"
+        app:layout_constraintTop_toBottomOf="@+id/newPasswordCheckt" />
+
+    <Button
+        android:id="@+id/pwToInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다음 단계로"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newPasswordCheckb"
+        app:layout_constraintVertical_bias="0.31" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

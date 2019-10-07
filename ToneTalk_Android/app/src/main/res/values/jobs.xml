@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="jobs">
+        <item>직업을 선택해주세요.</item>
+        <item>학생</item>
+        <item>선생님</item>
+        <item>사무직</item>
+        <item>의사</item>
+        <item>사업가</item>
+    </string-array>
+</resources>

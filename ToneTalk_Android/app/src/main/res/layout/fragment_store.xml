@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/storelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="톤톡\n스토어"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storelabel" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:srcCompat="@drawable/ic_action_search_black" />
+
+    <EditText
+        android:id="@+id/searchbar"
+        android:layout_width="320dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:hint="원하는 제품명, 브랜드 등을 입력하세요"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/newArrival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="NEW! 신상품"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/storelabel"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newArrival">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/new1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/brush" />
+
+            <ImageView
+                android:id="@+id/new2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/brush" />
+
+            <ImageView
+                android:id="@+id/new3"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/brush" />
+
+            <ImageView
+                android:id="@+id/new4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/brush" />
+
+            <ImageView
+                android:id="@+id/new5"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/brush" />
+
+            <ImageView
+                android:id="@+id/new6"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/brush" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/bestItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="BEST 이번주 핫한 아이템"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/newArrival"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bestItems">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/best1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/best" />
+
+            <ImageView
+                android:id="@+id/best2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/best" />
+
+            <ImageView
+                android:id="@+id/best3"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/best" />
+
+            <ImageView
+                android:id="@+id/best4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/best" />
+
+            <ImageView
+                android:id="@+id/best5"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/best" />
+
+            <ImageView
+                android:id="@+id/best6"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:padding="5dp"
+                android:src="@mipmap/best" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
