@@ -1,5 +1,4 @@
-# USAGE
-# python video_lip_landmarks.py --shape-predictor shape_predictor_68_face_landmarks.dat
+# USAGE : python video_lip_landmarks.py
 
 # import the necessary packages
 from imutils.video import VideoStream
@@ -20,6 +19,7 @@ FACIAL_LANDMARKS_INDEXES = OrderedDict([
 
 facial_features_cordinates = {}
 
+# lip RGB
 rgb_1 = 19
 rgb_2 = 199
 rgb_3 = 109
@@ -55,23 +55,15 @@ def visualize_facial_landmarks(frame, shape, colors=None, alpha=0.75):
     print(facial_features_cordinates)
     return output
 
-# construct the argument parse and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-p", "--shape-predictor", required=True,
-    help="path to facial landmark predictor")
-ap.add_argument("-r", "--picamera", type=int, default=-1,
-    help="whether or not the Raspberry Pi camera should be used")
-args = vars(ap.parse_args())
-
 # initialize dlib's face detector (HOG-based) and then create
 # the facial landmark predictor
-print("[INFO] loading facial landmark predictor...")
+#print("[INFO] loading facial landmark predictor...")
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(args["shape_predictor"])
+predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 # initialize the video stream and allow the cammera sensor to warmup
 print("[INFO] camera sensor warming up...")
-vs = VideoStream(usePiCamera=args["picamera"] > 0).start()
+vs = VideoStream().start()
 time.sleep(0.5)
 
 # loop over the frames from the video stream
@@ -98,10 +90,6 @@ while True:
     # show the frame
     cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
-
-    # if the `q` key was pressed, break from the loop
-    if key == ord("q"):
-        break
 
 # do a bit of cleanup
 cv2.destroyAllWindows()
